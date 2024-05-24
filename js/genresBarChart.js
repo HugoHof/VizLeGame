@@ -9,7 +9,7 @@ var isPlayingGenre = false
 //variables of the graph
 var currentGenreSelected = ""
 
-// Create the SVG container for the bar chart
+//iCreate the SVG container for the bar chart
 const barChartGenre = d3.select("#genres_bar_chart").append("svg")
     .attr("width", widthGenre + marginGenre.left + marginGenre.right)
     .attr("height", heightGenre + marginGenre.top + marginGenre.bottom)
