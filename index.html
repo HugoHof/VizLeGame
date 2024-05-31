@@ -11,6 +11,8 @@
     <!--our CSS-->
     <link rel="stylesheet" href="css/style.css"></style>
     <link rel="stylesheet" href="css/pacman.css"></style>
+    <link rel="stylesheet" href="css/mario.css"></style>
+    <link rel="stylesheet" href="css/sonic.css"></style>
 
     <!--D3.js-->
     <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -27,8 +29,8 @@
     <div id="fullpage">
         <!--Homepage-->
         <div class="section" id="homepage" style="height: 90%; width: 100%; margin: 0%; padding: 0%;"> 
-            <div class="mainPageBack" style="z-index: 0;">
-                <h1 class="mainPageText">How is the video game spread across different genres and platforms and are develloped by a large number of developers ?</h1>
+            <div class="mainPageBack">
+                <h1 class="mainPageText">How are video games distributed across different genres and platforms, and how many developers are involved in creating them ?</h1>
                 <div class="pacman">
                     <div class="pacman-top"></div>
                     <div class="pacman-bottom"></div>
@@ -37,46 +39,73 @@
             </div>
         </div>
         <!--Introduction-->
-        <div class="section" id="intro_page">
-            <h1 class="sectionTitle">
-                Introduction
-            </h1>
-            <p>
-                In 1962, the first video game, Spacewar!, was created. Since this date, each year more and more 
-                video games are developed. The studios that developed these games are spread around the world. 
-                The video games are defined by a multiple of genres and are developed to be used on different platforms.
-            </p>
+        <div class="section" id="intro_page" style="margin-left: 0;">
+            <div class="containerIntro">
+                <div class="introAnimation">
+                    <div class="sky">
+                        <div style="height: 70%;"></div>
+                        <img class="cloud" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudSingle.gif">
+                        <img class="cloud" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudDouble.gif">
+                        <img class="cloud" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudTriple.gif">
+                    </div>
+                    <div class="ground">
+                        <div class="skyblocks">
+                            <img class="brick" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Bricks.gif" height="70px;">
+                            <img class="brick" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/QuestionBlock.gif" height="70px;">
+                            <img class="brick" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Bricks.gif" height="70px;">
+                            <img class="brick" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Bricks.gif" height="70px;">
+                        </div>
+                        <img class="bush" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/BushSingle.gif" height="70px;">
+                        <img class="bush" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/BushDouble.gif" height="70px;">
+                        <img class="bush" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/BushSingle.gif" height="70px;">
 
-            <div id="intro_stats" style="display: flex; flex-direction: row; justify-content: center;">
-                <div id="genre_intro_stats" class = "statsPresentation" style ="display: grid;">
-                    <div id="genres_intro_stats_number" class="dynamicNumber"></div>
-                    <div id="genres_intro_stats_title" class="dynamicNumberTitle">
-                        <p><b>Genres</b></p>
+                        <div class="mario"></div>
                     </div>
                 </div>
-    
-                <div id="platforms_intro_stats" class = "statsPresentation" style ="display: grid;">
-                    <div id="platforms_intro_stats_number" class="dynamicNumber"></div>
-                    <div id="platforms_intro_stats_title" class="dynamicNumberTitle">
-                        <p><b>Platforms</b></p>
-                    </div>
-                </div>
-    
-                <div id="editors_intro_stats" class = "statsPresentation" style ="display: grid;">
-                    <div id="editors_intro_stats_number" class="dynamicNumber"></div>
-                    <div id="editors_intro_stats_title" class="dynamicNumberTitle">
-                        <p><b>Developers</b></p>
-                    </div>
-                </div>
-    
-                <div id="games_intro_stats" class = "statsPresentation" style ="display: grid;">
-                    <div id="games_intro_stats_number" class="dynamicNumber"></div>
-                    <div id="games_intro_stats_title" class="dynamicNumberTitle">
-                        <p><b>Games</b></p>
+                <!--Introduction Page content-->
+                <div class="introContent">
+                    <h1 class="sectionTitleGraph header">
+                        Introduction
+                    </h1>
+                    <p class="descriptionIntro">
+                        In 1962, the first video game, Spacewar!, was created. Since then, the development of video games has grown exponentially each year. 
+                        Video games span a multitude of genres and are designed for various platforms, created by a vast number of developers. 
+                        Our visualizations aim to illustrate the evolution of genres, platforms, and developers over the years from 1971 to 2023. Additionally, 
+                        we will explore the relationships among these three components throughout the history of video games.
+                        Our analysis is based on the <a href="https://www.kaggle.com/datasets/matheusfonsecachaves/popular-video-games">following dataset</a>.
+                        Below, you will find a comprehensive overview of the number of games, genres, platforms, and developers.
+                    </p>
+                    <div id="intro_stats" class="introNumberContainer">
+                        <div id="genre_intro_stats" class = "statsPresentation">
+                            <div id="genres_intro_stats_number" class="dynamicNumber"></div>
+                            <div id="genres_intro_stats_title" class="dynamicNumberTitle">
+                                <p><b>Genres</b></p>
+                            </div>
+                        </div>
+            
+                        <div id="platforms_intro_stats" class = "statsPresentation">
+                            <div id="platforms_intro_stats_number" class="dynamicNumber"></div>
+                            <div id="platforms_intro_stats_title" class="dynamicNumberTitle">
+                                <p><b>Platforms</b></p>
+                            </div>
+                        </div>
+            
+                        <div id="editors_intro_stats" class = "statsPresentation">
+                            <div id="editors_intro_stats_number" class="dynamicNumber"></div>
+                            <div id="editors_intro_stats_title" class="dynamicNumberTitle">
+                                <p><b>Developers</b></p>
+                            </div>
+                        </div>
+            
+                        <div id="games_intro_stats" class = "statsPresentation">
+                            <div id="games_intro_stats_number" class="dynamicNumber"></div>
+                            <div id="games_intro_stats_title" class="dynamicNumberTitle">
+                                <p><b>Games</b></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
         <!--Genre Trends-->
         <div class="section">
@@ -135,7 +164,7 @@
 
                         <div class="rightPartTop3Part">
                             <div class="rightPartTop3PartInfo">
-                                <h2 class="rightPartTitle">Top 3 games</h2>
+                                <h2 class="rightPartTitle" id="top_3_genre_games_title">Top 3 games</h2>
 
                                 <label class= "rightPartSelectorLabel" for="genres_games_top_3_criteria">Ranking in fuction of the :</label>
 
@@ -217,10 +246,84 @@
         </div>
         <!--Platforms-->
         <div class="section">
-            <h1 class="sectionTitle">
-                Games are developed for different platforms
-            </h1>
-            <img src="milestone_2/graphs_sketchs/platforms_sketch.jpg" width="90%" height="90%">
+             <!--Developers visualization-->
+             <div class="container">
+                <!--Left part of the developers diversity-->
+                <div class="left-panel">
+                    <!--Title of the section-->
+                    <h1 class="sectionTitleGraph header">
+                        that can be played on different platforms
+                    </h1>
+                    <!--Graph Developer's part that present a circle packing chart of developers-->
+                    <div id="platform_tree_map" class="content"></div>
+                    <!--Title of the graph presented-->
+                    <div class="footer">
+                        <h2 class="graphTitleDev" id="platforms_graph_title" style="margin-bottom: 5px;">Number of Video Games Realeased on each Platforms in 2000</h2>
+                        <!--Interaction with the developer circle packing chart-->
+                        <div class="visualizationPartTools">
+                            <div class="visualizationPartTimeTools">
+                                <label class= "rightPartSelectorLabel" for="year_platforms_slider">Current Year Displayed :</label>
+                                <input type="range" min="1971" max="2023" value="2000" class="visualizationPartSlider" id="year_platforms_slider">
+                                <p class="visualizationPartYearDisplayed" id="year_platforms_displayed">2000</p>
+                                <!--Play Button-->
+                                <button id="platforms_play_button" onclick="onClickPlayButtonPlatforms()" class="visualizationPartButtonTool">Play</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Right part of the Platform's diversity-->
+                <div class="right-panel">
+                    <!--When no platform is selected-->
+                    <div id="platforms_right_no_selected" style="display: initial;">
+                        <h2 class="rightPartIndication">Please Select a Platform</h2>
+                        <h2 class="rightPartIndication">(Click on a rectangle on the left)</h2>
+                    </div>
+                    <!--When a platform is selected-->
+                    <div id="platforms_right_selected" style="display: none; height: 100%;">
+                        <!--Top Games for the platform-->
+                        <div class="rightPartListPart">
+                            <div class="rightPartTop3PartInfo">
+                                <!--Part where the games relative to the platform are displayed-->
+                                <h2 class="rightPartTitleSmall" id="platforms_list_games_title">Please select a Platform</h2>
+                                <!--Slector of the ranking criteria-->
+                                <label class="rightPartSelectorLabel" for="platforms_list_games_criteria">Sort by :</label>
+                                <select class="rightPartSelector" id="platforms_list_games_criteria">
+                                    <option value="Plays" selected="selected">Number of Players</option>
+                                    <option value="Rating">Average Game's Review Rating</option>
+                                    <option value="Playing">Number of Games Downloaded</option>
+                                    <option value="Wishlist">Number of Games Wishlisted</option>
+                                    <option value="Reviews">Number of Reviews</option>
+                                </select>
+                            </div>
+                            <div class="rightPartTop3PartContent">
+                                <!--List of games-->
+                                <div id="platforms_list_games" class="rightPartListContainer"></div>
+                            </div>
+                        </div>
+                        <div class="rightPartGraphPart">
+                            <div class="rightPartTop3PartInfo">
+                                <!--Title of the graph presented for the evolution of a platform-->
+                                <h2 class="rightPartTitleSmall" id="platforms_graph_title_2"></h2>
+                                <!--Criteria selector for the graph-->
+                                <label class= "rightPartSelectorLabel" for="platforms_evolution_criteria">In function of :</label>
+                                    <select class="rightPartSelector" id="platforms_evolution_criteria">
+                                        <option value="Plays" selected="selected">Number of Players</option>
+                                        <option value="Rating">Average Game's Review Rating</option>
+                                        <option value="Playing">Number of Games Downloaded</option>
+                                        <option value="Wishlist">Number of Games present in the users wishlist</option>
+                                        <option value="Reviews">Number of Reviews</option>
+                                        <option value="Number_of_Games">Number of Games Realeased</option>
+                                    </select>
+                            </div>
+                            <!--Global Evolution of the developer part-->
+                            <div class= "rightPartTop3PartContent">
+                                <!--Graph Platforms's part that present a treemap of platforms-->
+                                <div id="platform_tree_map_2" style="align-self: center;height: 100%; width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!--Developers-->
         <div class="section">
@@ -316,91 +419,247 @@
                 </div>
             </div>
         </div>
-        <!--Interactive diagram (bubbles)-->
+        <!--Interactive diagram (sankey diagram)-->
         <div class="section">
-            
-            <div class="leftSankey" style="display: grid;">
-                <h1 class= "sectionTitle">Overview</h1>
+            <!--sankey visualization-->
+            <div class="container">
+                <!--Left part of the sanky diagram-->
+                <div class="left-panel">
+                    <!--Title of the section-->
+                    <h1 class="sectionTitleGraph header">
+                        Bringing it all together...
+                    </h1>
+                    <!--sankey diagram-->
+                    <div id="sankey_diagram_graph" class="content"></div>
+                    <!--Title of the graph presented-->
+                    <div class="footer">
+                        <h2 class="graphTitleDev" id="sankey_graph_title">Number of Video Games Realeased in 2000</h2>
+                        <!--Interaction with the developer circle packing chart-->
+                        <div class="visualizationPartTools">
+                            <div class="visualizationPartTimeTools">
+                                <label class= "rightPartSelectorLabel" for="year_sankey_slider">Current Year Displayed :</label>
+                                <input type="range" min="1971" max="2023" value="2000" class="visualizationPartSlider" id="year_sankey_slider">
+                                <p class="visualizationPartYearDisplayed" id="year_sankey_displayed">2000</p>
+                                <!--Play Button-->
+                                <button id="sankey_play_button" onclick="onClickPlayButtonSankey()" class="visualizationPartButtonTool">Play</button>
+                            </div>
+                            <div class="visualizationSelectorTools" id="sankey_order_draggable" style="display: flex; flex-direction: column;">
+                                <!--genres-->
+                                <div id="sankey_genres" class="draggable dragGenreOutline" draggable="true">
+                                    <label class="rightPartSelectorLabel" style="cursor: move; pointer-events: none;">Number of genres displayed : </label>
+                                    <select class="rightPartSelector" id="nb_sankey_displayed_selector_genre">
+                                        <option value="3">3</option>
+                                        <option value="5"selected="selected">5</option>
+                                        <option value="7">7</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="21">21</option>
+                                    </select>
+                                </div>
+                                <!--platforms-->
+                                <div id="sankey_platforms" class="draggable dragPlatformOutline" draggable="true">
+                                    <label class="rightPartSelectorLabel" style="cursor: move; pointer-events: none;">Number of platforms displayed : </label>
+                                    <select class="rightPartSelector" id="nb_sankey_displayed_selector_platform">
+                                        <option value="3">3</option>
+                                        <option value="5"selected="selected">5</option>
+                                        <option value="7">7</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                </div>
+                                <!--developers-->
+                                <div id="sankey_developers" class="draggable dragDeveloperOutline" draggable="true">
+                                    <label class="rightPartSelectorLabel" style="cursor: move; pointer-events: none;">Number of developers displayed : </label>
+                                    <select class="rightPartSelector" id="nb_sankey_displayed_selector_developer">
+                                        <option value="5">5</option>
+                                        <option value="7"selected="selected">7</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        <option value="40">40</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Right part of the sankey interactive-->
+                <div class="right-panel">
+                    <!--When an item is selected-->
+                    <div id="sankey_right_selected" style="display: initial; height: 100%;">
+                        <!--Top Games for the selection-->
+                        <div class="rightPartListPart">
+                            <div class="rightPartTop3PartInfo">
+                                <!--Part where the games relative to the items are displayed-->
+                                <div id="sankey_list_games_filter"></div>
+                                <!--Slector of the ranking criteria-->
+                                <div style="margin-top: 7px; display: flex; justify-content: end;">
+                                    <button class="clearButton" onclick="removeFilterSankey('all', null);">Clear all</button>
+                                </div>
+                                <div>
+                                    <label class="rightPartSelectorLabel">Sort by :</label>
+                                    <select class="rightPartSelector" id="sankey_list_games_criteria">
+                                        <option value="Plays" selected="selected">Number of Players</option>
+                                        <option value="Rating">Average Game's Review Rating</option>
+                                        <option value="Playing">Number of Games Downloaded</option>
+                                        <option value="Wishlist">Number of Games Wishlisted</option>
+                                        <option value="Reviews">Number of Reviews</option>
+                                    </select>
+                                    <label class="rightPartSelectorLabel">Top :</label>
+                                    <select class="rightPartSelector" id="sankey_list_games_top">
+                                        <option value="25" selected="selected">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                        <option value="150">150</option>
+                                        <option value="300">300</option>
+                                        <option value="10000000000">All</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="rightPartTop3PartContent">
+                                <!--List of games-->
+                                <div id="sankey_list_games" class="rightPartListContainer"></div>
+                            </div>
+                        </div>
+                        <div class="rightPartGraphPart">
+                            <div class="rightPartTop3PartInfo">
+                                <!--Title of the graph presented for the evolution of the selection-->
+                                <h2 class="rightPartTitleSmall" id="sankey_graph_title_2">Global evolution of the selected item(s) along the years</h2>
+                                <!--Criteria selector for the graph-->
+                                <label class= "rightPartSelectorLabel" for="sankey_evolution_criteria">In function of :</label>
+                                    <select class="rightPartSelector" id="sankey_evolution_criteria">
+                                        <option value="Plays" selected="selected">Number of Players</option>
+                                        <option value="Rating">Average Game's Review Rating</option>
+                                        <option value="Playing">Number of Games Downloaded</option>
+                                        <option value="Wishlist">Number of Games present in the users wishlist</option>
+                                        <option value="Reviews">Number of Reviews</option>
+                                        <option value="Number_of_Games">Number of Games Realeased</option>
+                                    </select>
+                            </div>
+                            <!--Global Evolution of the selected item part-->
+                            <div class= "rightPartTop3PartContent">
+                                <!--Graph selected item's part that present a graph along the years-->
+                                <div id="sankey_circle_packing_chart_2" style="align-self: center; height: 100%; width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Conclusion-->
+        <div class="section">
 
-                <p style="font-size: xx-large; text-align: center;"><b><i>This is where the sankey diagram will be</i></b></p>
+            <div class="aboutUsSection" style="gap: 0%;">
+                <h1 class="sectionTitleGraph header">
+                    Conclusion
+                </h1>
+
+                <div style="display: flex; gap: 1%;width: 98%;margin-left: -0.5%;padding: 1%;">
+                    <div class="boxOutline descriptionIntro" style="text-align: justify; width: 60%;padding: 3%;">
+                        The graph on the right illustrates the increasing number of video games released annually. 
+                        Our analysis firstly revealed that the distribution of genres has evolved over time. 
+                        Furthermore, we observed that video games are developed for a multitude of platforms, and also that the number of developers engaged in this process has grown considerably over time. 
+                        Finally, we observed that the genres, platforms and developers can be linked in various ways. 
+                        Thank you for your attention, we hope that our visualization has piqued your interest and that you may be more inclined to pursue further research in the video game industry.
+                    </div>
+    
+                    <div class="boxOutline" style="width: 40%;">
+                        <h2 class="rightPartTitleSmall">Number of games realeased along the years</h2>
+                        <div id="conclusion_chart" style="align-self: center; height: fit-content; width: 100%;"></div>
+                    </div>
+        
+                </div>
+                
+            </div>
+            
+            <!--sonic-->
+            <div class='level-container' style="margin-left: -0.5%;">
+                <div class='row-container'>
+                  <div class='row'>
+                    <div class='sonic'></div>
+                  </div>
+                </div>
+                <div class='tube-container'>
+                  <div class='support-1'></div>
+                  <div class='support-2'></div>
+                  <div class='tube'></div>
+                </div>
+              </div>
+        </div>
+        <!--About us-->
+        <div class="section">
+
+            <div class="introAnimation" style="margin-left: -0.5%;">
+                <div class="sky">
+                    <div style="height: 70%;"></div>
+                    <img class="cloud" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudSingle.gif">
+                    <img class="cloud" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudDouble.gif">
+                    <img class="cloud" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudTriple.gif">
+                </div>
+                <div class="ground">
+                    <div class="skyblocks">
+                        <img class="brick" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Bricks.gif" height="70px;">
+                        <img class="brick" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/QuestionBlock.gif" height="70px;">
+                        <img class="brick" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Bricks.gif" height="70px;">
+                        <img class="brick" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Bricks.gif" height="70px;">
+                    </div>
+                    <img class="bush" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/BushSingle.gif" height="70px;">
+                    <img class="bush" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/BushDouble.gif" height="70px;">
+                    <img class="bush" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/BushSingle.gif" height="70px;">
+
+                    <div class="mario"></div>
+                </div>
             </div>
 
-            <div class="rightSankey">
-                
-                <div style="display: block;">
-                    <h2>Description: ###</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
+            <div class="aboutUsSection">
+                <h1 class="sectionTitleGraph header">
+                    About us and Context
+                </h1>
 
-                <div style="display: block;">
-                    <h2>Top 3 games by 
-                        <select class="metricSelector" id="metricSelector">
-                            <option id="plays" selected="selected">plays</option>
-                            <option id="ratings">ratings</option>
-                            <option id="playing">playing</option>
-                            <option id="wishlist">wishlist</option>
-                            <option id="reviews">reviews</option>
-                        </select>
-                    </h2>
-
-                    <div class="rankContainer">
-
-                        <div class="gameRankContainer" id="rank2" style="top: 20px;">
-                            <div class="gameContainer">
-                                <p style="padding: 2px;">Title:</p>
-                                <p style="padding: 2px;">genre:</p>
-                                <p style="padding: 2px;">Platforms:</p>
-                            </div>
-                            <p style="text-align: center;">#2</p>
+                <div class="aboutUsContainer">
+                    <div class="aboutUsItem">
+                        <div class="imgContainer">
+                            <img src="images/Mario.png">
                         </div>
-                        <div class="gameRankContainer" id="rank1">
-                            <div class="gameContainer">
-                                <p style="padding: 2px;">Title:</p>
-                                <p style="padding: 2px;">genre:</p>
-                                <p style="padding: 2px;">Platforms:</p>
-                            </div>
-                            <p style="text-align: center;">#1</p>
+                        <div class="name">
+                            <h1>Hugo Hof</h1>
+                            <a href="mailto:hugo.hof@epfl.ch">hugo.hof@epfl.ch</a>
                         </div>
-                        <div class="gameRankContainer" id="rank3" style="top: 40px;">
-                            <div class="gameContainer">
-                                <p style="padding: 2px;">Title:</p>
-                                <p style="padding: 2px;">genre:</p>
-                                <p style="padding: 2px;">Platforms:</p>
-                            </div>
-                            <p style="text-align: center;">#3</p>
-
+                    </div>
+    
+                    <div class="aboutUsItem">
+                        <div class="imgContainer">
+                            <img src="images/Luigi.png">
+                        </div>
+                        <div class="name">
+                            <h1>Eric Kurmann</h1>
+                            <a href="mailto:eric.kurmann@epfl.ch">eric.kurmann@epfl.ch</a>
+                        </div>
+                    </div>
+    
+                    <div class="aboutUsItem">
+                        <div class="imgContainer">
+                            <img src="images/Peach.png">
+                        </div>
+                        <div class="name">
+                            <h1>Camille Steiner</h1>
+                            <a href="mailto:camille.steiner@epfl.ch">camille.steiner@epfl.ch</a>
                         </div>
                     </div>
                 </div>
 
-            </div>
+                <div class="boxOutline descriptionIntro" style="text-align: justify; width: 60%;padding: 1%;">This web site was done in the context of the <a href="https://edu.epfl.ch/coursebook/en/data-visualization-COM-480">Data visualization course</a> at EPFL.
+                    We would like to thank the Data visualization team for their feedbacks during the milestones.
+                    The source code can be found <a href="https://github.com/com-480-data-visualization/project-2024-VizLeGame">here</a>.
+                </div>
 
-        </div>
-        <!--Conclusion-->
-        <div class="section">
-            <h1 class="sectionTitle">
-                Conclusion
-            </h1>
-            <p>
-                A conclusion to the story telling of our vizualization. Ex: Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa tempor nec feugiat nisl pretium fusce id velit ut. 
-                Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Fames ac turpis egestas maecenas pharetra. Ac odio tempor 
-                orci dapibus ultrices in iaculis nunc. Nisi est sit amet facilisis. Et netus et malesuada fames ac turpis egestas integer. Elit 
-                duis tristique sollicitudin nibh. Viverra adipiscing at in tellus integer feugiat. Condimentum lacinia quis vel eros donec ac odio 
-                tempor orci. Egestas purus viverra accumsan in nisl nisi scelerisque. Adipiscing tristique risus nec feugiat in fermentum posuere. 
-                A arcu cursus vitae congue mauris rhoncus. Aliquam vestibulum morbi blandit cursus.
-            </p>
-        </div>
-        <!--About us-->
-        <div class="section">
-            <h1 class="sectionTitle">
-                About us & Context
-            </h1>
+            </div>
         </div>
     </div>
 
@@ -413,22 +672,36 @@
         scrollOverflow: false,
         navigation: true, // Adds navigation dots
         navigationTooltips: ['Home', 'Introduction', 'Genre trends', 'Platforms', 'Developers', 'Interactive diagram', 'Conclusion', 'About us'], // Adds name to navigation dots
+        anchors: ['', 'Introduction', '', '', '', '', '', ''],
         sectionsColor: ['#000000', '', '', '', '', '', '', '#FFFFFF'], // Background colors for each section
         normalScrollElements: ".rightPartDescriptionPart, .podiumGame, .gameCard, .rightPartListContainer", // to avoid going to another page when scrolling
+        onLeave: function(origin, destination, direction, trigger){
+            if (destination.anchor === 'Introduction'){
+                // Introduction dynamic statistics displaying
+                displayNumberDynamically("#genres_intro_stats_number", 23, 2000);
+                displayNumberDynamically("#platforms_intro_stats_number", 175, 3000);
+                displayNumberDynamically("#editors_intro_stats_number", 12846, 5000);
+                displayNumberDynamically("#games_intro_stats_number", 26903, 7000);
+            }
+        },
         });
-    </script>
-    <!--Introduction dynamic statistics displaying-->
-    <script>
-        displayNumberDynamically("#genres_intro_stats_number", 23, 2000);
-        displayNumberDynamically("#platforms_intro_stats_number", 175, 3000);
-        displayNumberDynamically("#editors_intro_stats_number", 12846, 5000);
-        displayNumberDynamically("#games_intro_stats_number", 26903, 6000);
     </script>
     <!--Genres bar chart-->
     <script src = "js/genresBarChart.js"></script>
+    <!--platforms graph-->
+    <script src="js/PlatformPart/platformTreeMap.js"></script>
+    <script src="js/PlatformPart/platformsTopGames.js"></script>
+    <script src="js/PlatformPart/platformsEvolutionChart.js"></script>
     <!--Developers Circel Packing chart-->
     <script src = "js/DeveloperPart/developersCirclePackingChart.js"></script>
     <script src = "js/DeveloperPart/developersEvolutionChart.js"></script>
     <script src= "js/DeveloperPart/developerTopGames.js"></script>
+    <!--Sankey diagram-->
+    <script src="js/sankey/sankey.js"></script>
+    <script src="js/sankey/sankeyDiagram.js"></script>
+    <script src="js/sankey/sankeyEvolutionChart.js"></script>
+    <script src="js/sankey/sankeyRightPanel.js"></script>
+    <!--conclusion-->
+    <script src="js/conclusionGraph.js"></script>
 </body>
 </html>
